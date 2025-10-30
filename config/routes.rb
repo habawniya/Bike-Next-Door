@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "pages/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -11,5 +12,13 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  # root "posts#index"
+   root "bikes#index"
+  resources :bikes do
+    resources :bike_unavailable_dates, only: [:create, :destroy]
+  end
+  resources :cart_items, only: [:index, :create, :destroy]
+
+  # Bookings (checkout from cart)
+  resources :bookings
+
 end

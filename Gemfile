@@ -56,6 +56,9 @@ group :development do
   gem "web-console"
 end
 
+gem 'devise', '~> 4.9.2'
+gem "image_processing", "~> 1.12" 
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"

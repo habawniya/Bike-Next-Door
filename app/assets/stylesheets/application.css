@@ -8,3 +8,999 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+/* Container styling */
+.login-container {
+  width: 400px;
+  max-width: 90%;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.login-heading {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #343a40;
+  font-weight: 600;
+}
+
+/* Form fields */
+.login-field {
+  margin-bottom: 20px;
+}
+
+.login-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #495057;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.login-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Submit button */
+.login-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Devise links */
+.login-links {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-links a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+  color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------- Bike Form ---------- */
+.bike-form {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bike-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bike-form-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+.bike-form-input {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.bike-form-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0,123,255,0.4);
+}
+
+.bike-form-current-image-label {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: #555;
+}
+
+.bike-form-current-image {
+  margin-top: 5px;
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+}
+
+.bike-form-submit {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #28a745;
+  color: #fff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bike-form-submit:hover {
+  background-color: #218838;
+}
+
+
+
+
+.bike-form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.bike-form-submit {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #28a745;
+  color: #fff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bike-form-submit:hover {
+  background-color: #218838;
+}
+
+.bike-form-back {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #6c757d;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bike-form-back:hover {
+  background-color: #5a6268;
+}
+
+.bike-show-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.bike-card-show {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.bike-card-show img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.bike-owner-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+
+.bike-payment-info {
+  font-size: 0.95rem;
+  color: #28a745; /* green color for "available" */
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Page Basics === */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f8fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Header / Navbar === */
+.bike-navbar {
+  background: linear-gradient(135deg, #4190e4, #00bfff);
+  color: white;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.bike-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bike-left,
+.bike-right,
+.bike-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bike-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* === Buttons === */
+.bike-btn {
+  display: inline-block;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.bike-btn-blue {
+  background-color: #007bff;
+  color: white;
+}
+
+.bike-btn-blue:hover {
+  background-color: #1e7adb;
+}
+
+.bike-btn-green {
+  background-color: #28a745;
+  color: white;
+}
+
+.bike-btn-green:hover {
+  background-color: #1e7e34;
+}
+
+.bike-btn-gray {
+  background-color: #6c757d;
+  color: white;
+}
+
+.bike-btn-gray:hover {
+  background-color: #565e64;
+}
+
+.bike-btn-red {
+  background-color: #dc3545;
+  color: white;
+}
+
+.bike-btn-red:hover {
+  background-color: #a71d2a;
+}
+
+/* === Bike Gallery === */
+.bike-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* === Individual Bike Box === */
+.bike-box {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 360px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bike-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.bike-photo {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+/* === Text Info === */
+.bike-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.8rem 1rem 0.2rem 1rem;
+}
+
+.bike-rate {
+  color: #28a745;
+  font-weight: 600;
+  margin: 0 1rem 0.3rem 1rem;
+}
+
+.bike-note {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 1rem 1rem;
+}
+
+/* === Actions === */
+.bike-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem 1rem;
+}
+
+/* === Date Inputs === */
+.bike-dates {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.bike-date {
+  flex: 1;
+  padding: 0.5rem;
+  margin-right: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.bike-date:last-child {
+  margin-right: 0;
+}
+
+/* === Form Section === */
+form {
+  border-top: 1px solid #eee;
+  padding-top: 0.8rem;
+  padding-bottom: 1rem;
+}
+
+
+
+
+
+/* === Form Section (Updated) === */
+form {
+  border-top: 1px solid #eee;
+  padding: 1rem;
+  text-align: center; /* Centers the Add to Cart button */
+}
+
+/* Center and style the submit button inside the form */
+form .bike-btn {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.7rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+
+
+
+
+/* === Page Container === */
+.show-bike-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* === Card Styling === */
+.show-bike-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 600px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.show-bike-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* === Image === */
+.show-bike-image {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* === Text Details === */
+.show-bike-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.show-bike-info {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.show-bike-info span {
+  font-weight: 600;
+  color: #111;
+}
+
+.show-bike-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === Buttons === */
+.show-bike-btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.show-bike-btn-blue {
+  background-color: #007bff;
+}
+
+.show-bike-btn-blue:hover {
+  background-color: #0056b3;
+}
+
+.show-bike-btn-green {
+  background-color: #28a745;
+}
+
+.show-bike-btn-green:hover {
+  background-color: #1e7e34;
+}
+
+.show-bike-btn-red {
+  background-color: #dc3545;
+}
+
+.show-bike-btn-red:hover {
+  background-color: #a71d2a;
+}
+
+.show-bike-btn-gray {
+  background-color: #6c757d;
+}
+
+.show-bike-btn-gray:hover {
+  background-color: #565e64;
+}
+
+/* Small Button (for remove) */
+.show-bike-small-btn {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  margin-left: 10px;
+}
+
+/* === Owner Actions === */
+.show-bike-owner-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* === Divider === */
+.show-bike-line {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+/* === Unavailable Dates List === */
+.show-bike-subtitle {
+  text-align: left;
+  margin-top: 1.2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.show-bike-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 0.8rem 0 1.5rem 0;
+}
+
+.show-bike-list-item {
+  background: #f1f3f5;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* === Add Date Form === */
+.show-bike-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.show-bike-date-input {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* === Back Button === */
+.show-bike-back {
+  margin-top: 1.5rem;
+}
+
+
+
+
+/* ==== Edit/Delete Button Group ==== */
+.bike-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Common style for Edit & Delete buttons */
+.bike-action-btn {
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 10px 0;
+  width: 140px; /* 👈 Same fixed width for both */
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+/* Edit button */
+.bike-action-edit {
+  background-color: #007bff;
+  color: #fff;
+}
+.bike-action-edit:hover {
+  background-color: #0056b3;
+}
+
+/* Delete button */
+.bike-action-delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+.bike-action-delete:hover {
+  background-color: #b21f2d;
+}
+
+
+
+
+
+
+
+
+.bike-cart-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #222;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.bike-cart-container {
+  width: 90%;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.bike-cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.bike-cart-table th {
+  background: #333;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  border-radius: 8px 8px 0 0;
+}
+
+.bike-cart-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.bike-cart-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bike-cart-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.bike-cart-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.bike-cart-price {
+  font-weight: 600;
+  color: #007b00;
+}
+
+.bike-cart-remove-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.bike-cart-remove-btn:hover {
+  background-color: #e63939;
+}
+
+.bike-cart-book-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.bike-cart-book-btn:hover {
+  background-color: #0056b3;
+}
+
+.bike-cart-actions {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.bike-cart-empty {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 50px;
+}
+
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  margin-top: 30px;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.empty-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 30px;
+}
+
+.empty-message .btn {
+  margin-top: 15px;
+}
+
+.bookings-table-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.bookings-table th, .bookings-table td {
+  padding: 14px 12px;
+  text-align: left;
+}
+
+.bookings-table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.bookings-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.bookings-table tr:hover {
+  background-color: #e9f3ff;
+  transition: background 0.3s ease;
+}
+
+.booking-bike-image {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #555;
+}
+
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  margin-top: 30px;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.empty-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 30px;
+}
+
+.empty-message .btn {
+  margin-top: 15px;
+}
+
+.bookings-table-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.bookings-table th, .bookings-table td {
+  padding: 14px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.bookings-table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.bookings-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.bookings-table tr:hover {
+  background-color: #e9f3ff;
+  transition: background 0.3s ease;
+}
+
+.booking-bike-image {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-size: 0.9rem;
+  margin-right: 8px; 
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #555;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #b02a37;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+}
+
+
+

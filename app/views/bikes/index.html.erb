@@ -1,0 +1,96 @@
+<header class="bike-navbar">
+  <% if user_signed_in? %>
+    <div class="bike-topbar">
+      <!-- Left: Sign Out + Welcome -->
+      <div class="bike-left">
+        <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "bike-btn bike-btn-gray" %>
+        <h1 class="bike-title">Welcome to Bike Rentals 🏍️</h1>
+      </div>
+
+      <!-- Right: Buttons -->
+      <div class="bike-right">
+        <% if current_user.owner? %>
+          <%= link_to "Add New Bike", new_bike_path, class: "bike-btn bike-btn-green" %>
+          <%= link_to "My Bookings", bookings_path, class: "bike-btn bike-btn-blue" %>
+
+        <% else %>
+          <%= link_to "My Bookings", bookings_path, class: "bike-btn bike-btn-blue" %>
+          <%= link_to "Cart", cart_items_path, class: "bike-btn bike-btn-blue" %>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <div class="bike-topbar">
+      <h1 class="bike-title">Welcome to Bike Rentals 🚴‍♂️</h1>
+      <div class="bike-actions">
+        <%= link_to 'Sign in', new_user_session_path, class: "bike-btn bike-btn-blue" %>
+      </div>
+    </div>
+  <% end %>
+</header>
+
+<div class="bike-search">
+  <%= form_with url: bikes_path, method: :get, local: true, class: "bike-search-form" do %>
+    <!-- Search by name -->
+    <%= text_field_tag :search, params[:search], placeholder: "Search bike by name...", class: "bike-date" %>
+
+    <!-- Sort by price -->
+    <%= select_tag :sort, options_for_select([
+      ["Sort by Price (Low to High)", "low_to_high"],
+      ["Sort by Price (High to Low)", "high_to_low"],
+      ["none", "none"]
+    ], selected: params[:sort]), class: "bike-date" %>
+
+    <%= submit_tag "Apply Filters", class: "bike-btn bike-btn-blue" %>
+  <% end %>
+</div>
+
+
+<div class="bike-search">
+  <%= form_with url: bikes_path, method: :get, local: true, class: "bike-search-form" do %>
+    <%= label_tag :start_date, "Start Date:" %>
+    <%= date_field_tag :start_date, params[:start_date], required: true, class: "bike-date" %>
+
+    <%= label_tag :end_date, "End Date:" %>
+    <%= date_field_tag :end_date, params[:end_date], required: true, class: "bike-date" %>
+
+    <%= submit_tag "Check Availability", class: "bike-btn bike-btn-blue" %>
+  <% end %>
+</div>
+
+
+<div class="bike-gallery">
+  <% @bikes.each do |bike| %>
+    <div class="bike-box">
+      <% if bike.image.attached? %>
+        <%= link_to bike_path(bike) do %>
+          <%= image_tag bike.image, width: 400, height: 250, class: "bike-photo" %>
+        <% end %>
+      <% else %>
+        <%= link_to bike_path(bike) do %>
+          <%= image_tag "https://via.placeholder.com/400x250", width: 400, height: 250, class: "bike-photo" %>
+        <% end %>
+      <% end %>
+
+      <p class="bike-name"><%= bike.name %></p>
+      <p class="bike-rate"><%= number_to_currency(bike.price_per_day,unit: "₹") %>/day</p>
+      <p class="bike-note">Pay at Pickup Location Available</p>
+
+      <% if current_user&.owner? %>
+      <div class="bike-actions">
+        <%= link_to "Edit", edit_bike_path(bike), class: "bike-action-btn bike-action-edit" %>
+        <%= button_to "Delete", bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "bike-action-btn bike-action-delete" %>
+      </div>
+      <% else %>
+        <%= form_with url: cart_items_path, method: :post, local: true do |f| %>
+          <%= hidden_field_tag :bike_id, bike.id %>
+          <div class="bike-dates">
+            <%= date_field_tag :start_date, nil, required: true, class: "bike-date" %>
+            <%= date_field_tag :end_date, nil, required: true, class: "bike-date" %>
+          </div>
+          <%= f.submit "Add to Cart", class: "bike-btn bike-btn-green" %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

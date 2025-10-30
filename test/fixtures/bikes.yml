@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  engine: MyString
+  start_power: MyString
+  model_year: 1
+  price_per_day: 1
+  user: one
+
+two:
+  name: MyString
+  engine: MyString
+  start_power: MyString
+  model_year: 1
+  price_per_day: 1
+  user: two

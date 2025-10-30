@@ -1,0 +1,47 @@
+<h2 class="bike-cart-title">Your Cart 🛒</h2>
+
+<% if @cart_items.any? %>
+  <div class="bike-cart-container">
+    <table class="bike-cart-table">
+      <thead>
+        <tr>
+          <th>Bike</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Duration</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart_items.each do |item| %>
+          <% bike = Bike.find(item["bike_id"]) %>
+          <% duration = (item.end_date - item.start_date).to_i + 1 %>
+          <tr>
+            <td class="bike-cart-info">
+              <% if bike.image.attached? %>
+                <%= image_tag bike.image, class: "bike-cart-image" %>
+              <% else %>
+                <%= image_tag "placeholder_bike.jpg", class: "bike-cart-image" %>
+              <% end %>
+              <span class="bike-cart-name"><%= bike.name %></span>
+            </td>
+            <td><%= item.start_date.strftime("%d %b %Y") %></td>
+            <td><%= item.end_date.strftime("%d %b %Y") %></td>
+            <td class="bike-cart-duration"><%= duration %> days</td>
+            <td class="bike-cart-price">₹<%= duration * bike.price_per_day %></td>
+            <td>
+              <%= button_to "Remove", cart_item_path(item), method: :delete, class: "bike-cart-remove-btn" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="bike-cart-actions">
+      <%= button_to "Place Booking", bookings_path, method: :post, class: "bike-cart-book-btn" %>
+    </div>
+  </div>
+<% else %>
+  <p class="bike-cart-empty">Your cart is empty.</p>
+<% end %>

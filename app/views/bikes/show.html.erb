@@ -1,0 +1,42 @@
+<div class="show-bike-container">
+  <div class="show-bike-card">
+    <% if @bike.image.attached? %>
+      <%= image_tag @bike.image, class: "show-bike-image" %>
+    <% else %>
+      <%= image_tag "https://via.placeholder.com/500x300", class: "show-bike-image" %>
+    <% end %>
+
+    <div class="show-bike-details">
+      <h2 class="show-bike-name"><%= @bike.name %></h2>
+      <p class="show-bike-info">Engine: <span><%= @bike.engine %></span></p>
+      <p class="show-bike-info">Start: <span><%= @bike.start_power %></span></p>
+      <p class="show-bike-info">Model: <span><%= @bike.model_year %></span></p>
+      <p class="show-bike-price"><%= number_to_currency(@bike.price_per_day) %> / day</p>
+    </div>
+
+    <% if current_user&.owner? %>
+      <hr class="show-bike-line">
+
+      <h3 class="show-bike-subtitle">Unavailable Dates</h3>
+      <ul class="show-bike-list">
+        <% @bike.bike_unavailable_dates.each do |date_record| %>
+          <li class="show-bike-list-item">
+            <%= date_record.date.strftime("%d %B %Y") %>
+            <%= button_to "Remove", bike_bike_unavailable_date_path(@bike, date_record),
+                method: :delete, class: "show-bike-btn show-bike-btn-red show-bike-small-btn" %>
+          </li>
+        <% end %>
+      </ul>
+
+      <h4 class="show-bike-subtitle">Mark a New Unavailable Date:</h4>
+      <%= form_with url: bike_bike_unavailable_dates_path(@bike), local: true, class: "show-bike-form" do |f| %>
+        <%= date_field_tag :date, nil, required: true, class: "show-bike-date-input" %>
+        <%= f.submit "Add Date", class: "show-bike-btn show-bike-btn-green" %>
+      <% end %>
+    <% end %>
+
+    <div class="show-bike-back">
+      <%= link_to "← Back to Bikes", bikes_path, class: "show-bike-btn show-bike-btn-gray" %>
+    </div>
+  </div>
+</div>

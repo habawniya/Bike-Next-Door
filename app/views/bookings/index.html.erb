@@ -1,0 +1,77 @@
+<h1>Your Bookings</h1>
+
+<% if @bookings.empty? %>
+  <div class="empty-message">
+    <p>You donot  have any bookings yet.</p>
+    <%= link_to "Browse Bikes", bikes_path, class: "btn btn-primary" %>
+  </div>
+<% else %>
+  <div class="bookings-table-container">
+    <table class="bookings-table">
+      <thead>
+        <tr>
+          <th>Bike</th>
+          <th>Image</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Duration</th>
+          <th>Total Price</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.bike.name %></td>
+
+            <td>
+              <% if booking.bike.image.attached? %>
+                <%= image_tag booking.bike.image, class: "booking-bike-image" %>
+              <% else %>
+                <span>No Image</span>
+              <% end %>
+            </td>
+            <td><%= booking.start_date.strftime("%d %b %Y") %></td>
+            <td><%= booking.end_date.strftime("%d %b %Y") %></td>
+            <td><%= (booking.end_date - booking.start_date).to_i + 1 %> day</td>
+            <td>₹<%= booking.total_price %></td>
+            <% if current_user.owner? %>
+              <td><%= booking.user.email %></td>
+              <td><%= booking.user.contact_number.presence || "N/A" %></td>
+            <% else %>
+              <td><%= booking.bike.user.email %></td>
+              <td><%= booking.bike.user.contact_number.presence || "N/A" %></td>
+            <% end %>
+            <td>
+              <% if booking.status.present? %>
+                <span style="font-weight: 600; color: <%= booking.status == "cancelled" ? "red" : "green" %>;">
+                  <%= booking.status.capitalize %>
+                </span>
+              <% else %>
+                <span>Pending</span>
+              <% end %>
+            </td>
+
+            <td>
+              <div class="action-buttons">
+                <%= link_to "View Bike", bike_path(booking.bike), class: "btn btn-secondary" %>
+                <% if booking.status != "cancelled" %>
+                  <%= button_to "Cancel Booking",
+                        booking_path(booking),
+                        method: :patch,
+                        params: { booking: { status: "cancelled" } },
+                        data: { confirm: "Are you sure you want to cancel this booking?" },
+                        class: "btn btn-danger" %>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
